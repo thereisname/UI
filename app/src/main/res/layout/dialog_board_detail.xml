@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4C4E52">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/baseline_delete_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/baseline_edit_24"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/closeButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="제목"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/closeButton" />
+
+        <TextView
+            android:id="@+id/hashTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="#장소  #날짜  #친구와 #..."
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#80ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hashTag" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="7dp"
+            android:text="내용"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hashTag" />
+
+        <ImageView
+            android:id="@+id/mainImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:maxWidth="500dp"
+            android:maxHeight="500dp"
+            android:minWidth="300dp"
+            android:minHeight="300dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="7dp"
+            android:text=" 그녀와 나는요 그땐 참 어렸어요\n
+많이 사랑했고 때론 많이 다퉜었죠\n
+지금 생각하면 모두 내 잘못이죠\n
+마지막 그날도 그녀는 울었어\n
+나는 그녈 잡지 못했죠\n
+지금까지도 너무 후회가 돼요\n
+그 후로 누굴 사랑한 적 없어 아직은\n
+그녀와 나는요\n
+언젠가 만날 거죠\n
+변해버린 모습 변해버린 시간 속에\n
+하지만 괜찮아 내 눈엔 아름답던\n
+예전 모습 그대로 일 거예요\n
+그녀도 날 못 잊을 거야 나는 믿어요\n
+그만큼 사랑했죠\n
+그래서 우린 한 번은 만나야만 해요\n
+그녀의 친구라도 이 노랠 듣는다면\n
+그녀에게 전해줘요\n
+내가 아직 사랑한다고\n
+우리가 처음 만난 그 시간 그 자리에\n
+내가 매일 기다린다고\n
+언제라도\n
+그녀도 날 못 잊을 거야 나는 믿어요\n
+그만큼 사랑했죠\n
+그래서 우린 한 번은 만나야만 해요\n
+그녀의 친구라도 이 노랠 듣는다면\n
+그녀에게 전해줘요\n
+내가 아직 사랑한다고\n
+우리가 처음 만난 그 시간 그 자리에\n
+내가 매일 기다린다고\n
+그녀의 친구라도 이 노랠 듣는다면\n
+그녀에게 전해줘요\n
+내가 아직 사랑한다고\n
+우리가 처음 만난 그 시간 그 자리에\n
+내가 매일 기다린다고\n
+내가 매일 기다린다고\n "
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainImg" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

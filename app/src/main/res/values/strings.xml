@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UI2</string>
+
+
+    <string name="join_con">ID, PW, 이름, 휴대폰 번호, 생년월일, 이메일을 정확하게 입력해야합니다.</string>
+    <string name="join_title">회원가입</string>
+    <string name="join_cont_name">이름(필수)</string>
+    <string name="join_cont_bir">생년월일(필수)</string>
+    <string name="join_cont_num">휴대폰번호(필수)</string>
+    <string name="join_cont_email">이메일</string>
+    <string name="join_hint_name">실명을 입력하세요</string>
+    <string name="join_hint_phone">\'-\'구분 없이 입력</string>
+    <string name="join_hint_bir">8자리 입력(YYYYMMDD)</string>
+    <string name="join_hint_email">ex. email@email.com</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title</string>
+    <string name="checkBox">북마크</string>
+    <string name="username">"@username"</string>
+    <string name="hashtag">#봄 #친구랑 #식도락</string>
+</resources>
