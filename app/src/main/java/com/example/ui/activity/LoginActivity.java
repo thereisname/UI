@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.ui.AppHelper;
 import com.example.ui.R;
+import com.example.ui.SHA256;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -29,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -65,7 +67,15 @@ public class LoginActivity extends AppCompatActivity {
 
         login.setOnClickListener(v -> {
             String email = emailText.getText().toString().trim();
-            String password = passwordText.getText().toString().trim();
+
+            String password;
+            SHA256 sha256 = new SHA256();
+            try {
+                password = sha256.encrypt(passwordText.getText().toString().trim());
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+
             if (email.equals("") || password.equals(""))
                 Toast.makeText(this, "email, password를 입력하세요.", Toast.LENGTH_SHORT).show();
             else

@@ -13,8 +13,8 @@ package com.example.ui;
  * </pre>
  * The above is a key, and the contents of the setter are stored in the Firebase Realtime Database as a key value.
  *
- * @author min
- * @version 1.0
+ * @author MIN
+ * @since 1.0
  */
 public class UserAccount {
     private String idToken;  // Firebase UID(고유 토큰 정보)
