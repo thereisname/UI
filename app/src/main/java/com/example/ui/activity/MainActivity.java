@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.ui.R;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView myPage = findViewById(R.id.myPage);
         ImageView home = findViewById(R.id.home);
+        Button content = findViewById(R.id.content);
 
         mDatabase = FirebaseDatabase.getInstance().getReference("UI");
 
@@ -40,5 +42,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+
+        content.setOnClickListener(v -> startActivity(new Intent(this, InputContentActivity.class)));
     }
 }
