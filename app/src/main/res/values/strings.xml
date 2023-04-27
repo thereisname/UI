@@ -2,7 +2,7 @@
     <string name="app_name">UI2</string>
 
 
-    <string name="join_con">NickName, PW, Name, Phone Number, 생년월일, Email를 정확하게 입력해야합니다.</string>
+    <string name="join_con">NickName, PW, re-PW , Email를 정확하게 입력해야합니다.</string>
     <string name="join_title">회원가입</string>
     <string name="join_cont_name">이름(필수)</string>
     <string name="join_cont_bir">생년월일(필수)</string>

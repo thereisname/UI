@@ -126,64 +126,11 @@
                         android:inputType="textPassword" />
                 </LinearLayout>
 
-                <!-- 이름 -->
-                <LinearLayout style="@style/join_conLayout">
-
-                    <TextView
-                        android:id="@+id/label3"
-                        style="@style/join_textview"
-                        android:text="@string/join_cont_name" />
-
-                    <EditText
-                        android:id="@+id/inputName"
-                        style="@style/inputBox"
-                        android:hint="@string/join_hint_name"
-                        android:importantForAutofill="no"
-                        android:inputType="text" />
-                </LinearLayout>
-
-                <!-- 휴대폰번호 -->
-                <LinearLayout style="@style/join_conLayout">
-
-                    <TextView
-                        android:id="@+id/label2"
-                        style="@style/join_textview"
-                        android:text="@string/join_cont_num" />
-
-                    <EditText
-                        android:id="@+id/inputNum"
-                        style="@style/inputBox"
-                        android:hint="@string/join_hint_phone"
-                        android:importantForAutofill="no"
-                        android:inputType="phone"
-                        android:maxLength="13" />
-
-                </LinearLayout>
-
-                <!-- 생년월일 -->
-                <LinearLayout
-                    style="@style/join_conLayout"
-                    android:layout_marginBottom="0dp">
-
-                    <TextView
-                        android:id="@+id/label4"
-                        style="@style/join_textview"
-                        android:text="@string/join_cont_bir" />
-
-                    <EditText
-                        android:id="@+id/inputBr"
-                        style="@style/inputBox"
-                        android:hint="@string/join_hint_bir"
-                        android:importantForAutofill="no"
-                        android:inputType="number"
-                        android:maxLength="8" />
-                </LinearLayout>
-
                 <!-- btn -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="35dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center">
 

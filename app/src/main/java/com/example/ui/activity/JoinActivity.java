@@ -23,7 +23,7 @@ public class JoinActivity extends AppCompatActivity {
     // 1. DB 읽거나 쓰기 위해서 DatabaseReference 인스턴스 필요.
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabase;
-    private EditText inputNickName, inputPw, inputRePw, inputName, inputNum, inputBr, inputEmail;
+    private EditText inputNickName, inputPw, inputRePw, inputEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +37,7 @@ public class JoinActivity extends AppCompatActivity {
         inputNickName = findViewById(R.id.inputID);
         inputPw = findViewById(R.id.inputPw);
         inputRePw = findViewById(R.id.inputRePw);
-        inputName = findViewById(R.id.inputName);
-        inputNum = findViewById(R.id.inputNum);
-        inputBr = findViewById(R.id.inputBr);
         inputEmail = findViewById(R.id.inputEmail);
-
-        // Show phone number hyphen('-')
-        inputNum.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
 
         confirm_button.setOnClickListener(v -> {
             SHA256 sha256 = new SHA256();
@@ -57,9 +51,6 @@ public class JoinActivity extends AppCompatActivity {
             } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             }
-            String strName = inputName.getText().toString();
-            String strNum = inputNum.getText().toString();
-            String strBr = inputBr.getText().toString();
             String strEmail = inputEmail.getText().toString();
 
             if (strPw.equals(strRePw)) {
@@ -70,10 +61,7 @@ public class JoinActivity extends AppCompatActivity {
                         UserAccount account = new UserAccount();
                         account.setIdToken(firebaseUser.getUid());
                         account.setUserEmail(firebaseUser.getEmail());
-                        account.setPhoneNum(strNum);
                         account.setUserNickName(strNickName);
-                        account.setUserName(strName);
-                        account.setUserBr(strBr);
 
                         mDatabase.child("users").child(firebaseUser.getUid()).setValue(account);
                         Toast.makeText(this, "회원가입에 성공하였습니다.", Toast.LENGTH_LONG).show();

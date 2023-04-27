@@ -19,9 +19,6 @@ public class UserAccount {
     private String idToken;  // Firebase UID(고유 토큰 정보)
     private String userEmail; // 이메일 아이디
     private String userNickName;
-    private String userName;
-    private String phoneNum;
-    private String userBr;
 
     public UserAccount() {
     }
@@ -34,29 +31,12 @@ public class UserAccount {
         return idToken;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
     }
 
-
     public void setUserNickName(String userNickName) {
         this.userNickName = userNickName;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
-    }
-
-    public void setUserBr(String userBr) {
-        this.userBr = userBr;
     }
 
     public String getUserEmail() {
@@ -65,13 +45,5 @@ public class UserAccount {
 
     public String getUserNickName() {
         return userNickName;
-    }
-
-    public String getPhoneNum() {
-        return phoneNum;
-    }
-
-    public String getUserBr() {
-        return userBr;
     }
 }
