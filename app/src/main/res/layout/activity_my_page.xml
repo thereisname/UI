@@ -17,12 +17,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/nickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="45dp"
-        android:text="사용자 이름"
         android:textColor="@color/white_op"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -36,7 +35,7 @@
         android:text="~~~~~~~~~"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/nickName" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/tableLayout"

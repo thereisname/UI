@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.ui.fragment.FragmentClient;
@@ -17,6 +18,8 @@ public class MainViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_view);
 
+        String userToken = getIntent().getStringExtra("userToken");
+
         ImageView myPage = findViewById(R.id.myPage);
         FragmentImage fragmentImage = new FragmentImage();
         FragmentClient fragmentClient = new FragmentClient();
@@ -26,6 +29,7 @@ public class MainViewActivity extends AppCompatActivity {
 
         myPage.setOnClickListener(v -> {
             Intent intent = new Intent(this, MyPageActivity.class);
+            intent.putExtra("userToken", userToken);
             startActivity(intent);
             finish();
         });
@@ -33,6 +37,7 @@ public class MainViewActivity extends AppCompatActivity {
         ImageView upload = findViewById(R.id.upload);
         upload.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("userToken", userToken);
             startActivity(intent);
             finish();
         });

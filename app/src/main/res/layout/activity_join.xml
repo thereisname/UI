@@ -46,13 +46,13 @@
                 android:layout_marginRight="30dp"
                 android:orientation="vertical">
 
-                <!-- ID 입력 -->
+                <!-- NickName 입력 -->
                 <TextView
                     android:id="@+id/codeText"
                     style="@style/join_textview"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="ID를 입력하세요." />
+                    android:text="사용할 이름을 입력하세요." />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -77,6 +77,23 @@
                         android:layout_marginStart="20dp"
                         android:layout_weight="1"
                         android:text="중복 확인" />
+                </LinearLayout>
+
+                <!-- 이메일 -->
+                <LinearLayout style="@style/join_conLayout">
+
+                    <TextView
+                        android:id="@+id/label6"
+                        style="@style/join_textview"
+                        android:text="@string/join_cont_email" />
+
+                    <EditText
+                        android:id="@+id/inputEmail"
+                        style="@style/inputBox"
+                        android:hint="@string/join_hint_email"
+                        android:importantForAutofill="no"
+                        android:inputType="textEmailAddress" />
+
                 </LinearLayout>
 
                 <!-- PW -->
@@ -142,8 +159,11 @@
                         android:maxLength="13" />
 
                 </LinearLayout>
+
                 <!-- 생년월일 -->
-                <LinearLayout style="@style/join_conLayout">
+                <LinearLayout
+                    style="@style/join_conLayout"
+                    android:layout_marginBottom="0dp">
 
                     <TextView
                         android:id="@+id/label4"
@@ -159,24 +179,6 @@
                         android:maxLength="8" />
                 </LinearLayout>
 
-                <!-- 이메일 -->
-                <LinearLayout
-                    style="@style/join_conLayout"
-                    android:layout_marginBottom="0dp">
-
-                    <TextView
-                        android:id="@+id/label6"
-                        style="@style/join_textview"
-                        android:text="@string/join_cont_email" />
-
-                    <EditText
-                        android:id="@+id/inputEmail"
-                        style="@style/inputBox"
-                        android:hint="@string/join_hint_email"
-                        android:importantForAutofill="no"
-                        android:inputType="textEmailAddress" />
-
-                </LinearLayout>
                 <!-- btn -->
                 <LinearLayout
                     android:layout_width="match_parent"

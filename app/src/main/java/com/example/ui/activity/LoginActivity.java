@@ -1,6 +1,5 @@
 package com.example.ui.activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,33 +10,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.example.ui.AppHelper;
 import com.example.ui.R;
 import com.example.ui.SHA256;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
 
     @Override
     protected void onDestroy() {
@@ -56,14 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         // [START initialize_auth]
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference("UI");
-
 
         EditText emailText = findViewById(R.id.userEmail);
         EditText passwordText = findViewById(R.id.userPw);
         Button login = findViewById(R.id.button2);
         Button join = findViewById(R.id.join);
-
 
         login.setOnClickListener(v -> {
             String email = emailText.getText().toString().trim();
@@ -71,21 +51,22 @@ public class LoginActivity extends AppCompatActivity {
             String password;
             SHA256 sha256 = new SHA256();
             try {
-                password = sha256.encrypt(passwordText.getText().toString().trim());
+                password = sha256.encrypt(sha256.encrypt(passwordText.getText().toString().trim()));
             } catch (NoSuchAlgorithmException e) {
                 throw new RuntimeException(e);
             }
 
             if (email.equals("") || password.equals(""))
-                Toast.makeText(this, "email, password를 입력하세요.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter email, password.", Toast.LENGTH_SHORT).show();
             else
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-                        startActivity(new Intent(getApplicationContext(), MainViewActivity.class));
+                        Intent intent = new Intent(getApplicationContext(), MainViewActivity.class);
+                        intent.putExtra("userToken",mAuth.getCurrentUser().getUid());
+                        startActivity(intent);
                     } else {
                         // If sign in fails, display a message to the user.
-                        Log.w(TAG, "signInWithEmail:failure", task.getException());
                         Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                     }
                 });

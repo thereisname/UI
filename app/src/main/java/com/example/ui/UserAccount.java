@@ -5,8 +5,7 @@ package com.example.ui;
  * <pre>
  *     idToken - About Unique Tokens
  *     userEmail
- *     password
- *     userID
+ *     userNickName
  *     userName
  *     phoneNum
  *     userBr
@@ -19,8 +18,7 @@ package com.example.ui;
 public class UserAccount {
     private String idToken;  // Firebase UID(고유 토큰 정보)
     private String userEmail; // 이메일 아이디
-    private String password;
-    private String userID;
+    private String userNickName;
     private String userName;
     private String phoneNum;
     private String userBr;
@@ -48,12 +46,9 @@ public class UserAccount {
         this.userEmail = userEmail;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserNickName(String userNickName) {
+        this.userNickName = userNickName;
     }
 
     public void setPhoneNum(String phoneNum) {
@@ -68,12 +63,8 @@ public class UserAccount {
         return userEmail;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public String getUserID() {
-        return userID;
+    public String getUserNickName() {
+        return userNickName;
     }
 
     public String getPhoneNum() {
