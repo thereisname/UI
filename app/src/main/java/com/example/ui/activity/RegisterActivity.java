@@ -3,8 +3,6 @@ package com.example.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.telephony.PhoneNumberFormattingTextWatcher;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.NoSuchAlgorithmException;
 
-public class JoinActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     // 1. DB 읽거나 쓰기 위해서 DatabaseReference 인스턴스 필요.
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabase;
@@ -28,7 +26,7 @@ public class JoinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join);
+        setContentView(R.layout.activity_register);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference("UI");
@@ -54,7 +52,7 @@ public class JoinActivity extends AppCompatActivity {
             String strEmail = inputEmail.getText().toString();
 
             if (strPw.equals(strRePw)) {
-                mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPw).addOnCompleteListener(JoinActivity.this, task -> {
+                mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPw).addOnCompleteListener(RegisterActivity.this, task -> {
                     if (task.isSuccessful()) {
                         // 가입 성공
                         FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
@@ -67,7 +65,7 @@ public class JoinActivity extends AppCompatActivity {
                         Toast.makeText(this, "회원가입에 성공하였습니다.", Toast.LENGTH_LONG).show();
                         System.exit(0);
                     } else
-                        Toast.makeText(JoinActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 });
             }
 

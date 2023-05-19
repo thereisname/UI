@@ -27,7 +27,7 @@
             android:name=".activity.PlaceActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.JoinActivity"
+            android:name=".activity.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MyPageActivity"

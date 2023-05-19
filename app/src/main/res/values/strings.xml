@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">UI2</string>
 
+    <string name="hint_pw">Password</string>
+    <string name="email">Email</string>
+    <string name="nickname">Nickname</string>
+    <string name="re_pw">Re-Password</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="join_con">NickName, PW, re-PW , Email를 정확하게 입력해야합니다.</string>
     <string name="join_title">회원가입</string>
     <string name="join_cont_name">이름(필수)</string>

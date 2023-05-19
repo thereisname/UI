@@ -32,9 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // 배경 Gif 처리 위한 코드.
-        ImageView imageView = findViewById(R.id.imageview);
-        Glide.with(this).load(R.raw.lala2).into(imageView);
 
         // [START initialize_auth]
         // Initialize Firebase Auth
@@ -42,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText emailText = findViewById(R.id.userEmail);
         EditText passwordText = findViewById(R.id.userPw);
-        Button login = findViewById(R.id.button2);
-        Button join = findViewById(R.id.join);
+        Button login = findViewById(R.id.loginBtn);
+        Button register = findViewById(R.id.registerBtn);
 
         login.setOnClickListener(v -> {
             String email = emailText.getText().toString().trim();
@@ -72,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
         });
 
-        join.setOnClickListener(v -> {
-            Intent intent = new Intent(this, JoinActivity.class);
+        register.setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         });
     }
